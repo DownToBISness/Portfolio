@@ -1,0 +1,665 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+
+
+.gradient-background {
+    background: linear-gradient(238deg,#4ecdc4,#f7fff7,#fee1a8);
+    background-size: 180% 180%;
+    animation: gradient-animation 9s ease infinite;
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+
+
+  /* Style the logo */
+  .logo img {
+      height: 110px;
+      width: auto;
+  }
+
+
+
+
+  /* The navigation menu */
+  .navbar {
+    overflow: hidden;
+    background-color: none;
+  }
+
+  /* Navigation links */
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  /* The subnavigation menu */
+  .subnav {
+    float: left;
+    overflow: hidden;
+  }
+
+  /* Subnav button */
+  .subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+
+  /* Add a red background color to navigation links on hover */
+  .navbar a:hover, .subnav:hover .subnavbtn {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  /* Style the subnav content - positioned absolute */
+  .subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: #4ecdc4;
+    width: 100%;
+    z-index: 1;
+  }
+
+  /* Style the subnav links */
+  .subnav-content a {
+    float: left;
+    color: white;
+    text-decoration: none;
+  }
+
+  /* Add a grey background color on hover */
+  .subnav-content a:hover {
+    background-color: #eee;
+    color: black;
+  }
+
+  /* When you move the mouse over the subnav container, open the subnav content */
+  .subnav:hover .subnav-content {
+    display: block;
+  }
+
+
+
+  body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-x: hidden; /* Hides horizontal scrollbar */
+    font-family: tahoma;
+    letter-spacing: 2px;
+}
+
+
+
+
+
+
+/* Header/Blog Title */
+.headerTitle {
+  padding: 35px;
+  font-size: 45px;
+  text-align: center;
+  color: white;
+
+}
+.headerTitle{
+  background: linear-gradient(
+    to right, rgba(0, 0, 0, 0.41), rgb(0 0 0 / 0)
+  ), url(headerTitleImg.jpg);
+  background-size: cover;
+  background-position: center -150px;
+}
+
+.headerTitle h8{
+  font-size: 31px;
+  color: white;
+}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.PHimg{
+  background-color: #ffffff93;
+  width: 100%;
+  padding: 20px;
+}
+
+.PHimg img{
+    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+}
+
+.leftcolumn .PHimg img{
+  height: 350px; /* Maintain the image's aspect ratio */
+}
+
+/* Hover effect for .img-hover-effect class */
+.img-hover-effect {
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+/* Hover effect for .img-hover-effect class */
+.img-hover-effect:hover {
+  transform: translateY(-5px); /* Move the image 5px up on hover */
+  filter: brightness(80%); /* Adjust the brightness on hover (optional) */
+  cursor: pointer; /* Change the cursor to a pointer */
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+.card img{
+  width: 100%;
+}
+
+.leftcolumn h2{
+  font-size: 33px;
+}
+
+.leftcolumn h5{
+  font-size: 21px;
+  font-style: oblique;
+}
+
+.leftcolumn p{
+  font-size: 17px;
+  font-style: italic;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.hover07 figure img {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.hover07 figure:hover img {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
+
+.hoverBlur img{
+  -webkit-filter: blur(3px);
+  filter: blur(8px);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.hoverBlur:hover img{
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
+
+
+
+
+.container {
+  position: relative;
+  width: 75%;
+}
+
+.OVimage {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.OVmiddle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .OVimage {
+  opacity: 0.3;
+}
+
+.container:hover .OVmiddle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #ffffff6f;
+  color: rgb(0, 0, 0);
+  font-size: 13px;
+  padding: 12px 28px;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* Style for the circular icons */
+.fa {
+  padding: 10px; /* Adjust the padding to your preference */
+  font-size: 20px; /* Adjust the font size */
+  width: 40px; /* Adjust the width */
+  height: 40px; /* Add height to create a perfect circle */
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  display: flex; /* Use flexbox to center content */
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Horizontally center the content */
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram{
+  background: #f291ff;
+  color: white;
+}
+
+.fa-linkedin{
+  background: #7cf4ff;
+  color: white;
+}
+
+.fa-envel{
+  background-color: black;
+  color: white;
+}
+  /*Footer*/
+
+
+
+.footer {
+    position: absolute;
+    width: 100%;
+    background: #3586ff;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;;
+  }
+
+  .social-icon,
+  .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+  }
+
+  .social-icon__item,
+  .menu__item {
+    list-style: none;
+  }
+
+  .social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  .social-icon__link:hover {
+    transform: translateY(-10px);
+  }
+
+  .menu__link {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+  }
+
+  .menu__link:hover {
+    opacity: 1;
+  }
+
+  .footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("https://i.ibb.co/wQZVxxk/wave.png");
+    background-size: 1000px 100px;
+  }
+
+  .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+  }
+
+  .wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+  }
+
+  .wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+  }
+
+  .wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+  }
+
+  @keyframes animateWaves {
+    0% {
+      background-position-x: 1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+
+  @keyframes animate {
+    0% {
+      background-position-x: -1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+
+
+/*Footer End*/
+
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background-color: inherit;
+  font-family: tahoma;
+  letter-spacing: 2px;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+
+  border-bottom: 2px solid #4ECDC4;
+  font-family: tahoma;
+  letter-spacing: 2px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+  font-family: tahoma;
+  letter-spacing: 2px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  border-bottom: 2px solid #4ECDC4;
+  font-family: tahoma;
+  letter-spacing: 2px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    box-shadow: 0 0 10px #000;
+    background: rgba(0, 0, 0, 0.604);
+}
+#chk1{
+    display: none;
+}
+i{
+    color: #fff;
+    cursor: pointer;
+}
+
+header ul{
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+}
+header ul li{
+    list-style: none;
+}
+header ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+header ul li a:hover{
+    border-bottom: 2px solid #4ECDC4;
+}
+header .menu{
+    font-size: 2.5em;
+    display: none;
+}
+@media(max-width:1000px){
+    .search-box button{
+        position: absolute;
+    }
+    header ul{
+        position: fixed;
+        top: 100px;
+        right: -100%;
+        background: rgba(0, 0, 0, 0.604);
+        height: calc(100vh - 100px);
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        transform: right 0.5s linear;
+    }
+    header .menu{
+        display: block;
+        width: 100px;
+        text-align: center;
+    }
+    #chk1:checked ~ ul{
+        right: 0;
+    }
+}
+@media(max-width:600px){
+    header .logo{
+        width: 100%;
+    }
+}
+#DB{
+  width: 115px;
+  padding: 10px;
+  margin-left: 50px;
+  margin-right: 100px;
+  margin-top: 10px;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background-color: inherit;
+  font-family: tahoma;
+  letter-spacing: 2px;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+
+  border-bottom: 2px solid #4ECDC4;
+  font-family: tahoma;
+  letter-spacing: 2px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+  font-family: tahoma;
+  letter-spacing: 2px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  border-bottom: 2px solid #4ECDC4;
+  font-family: tahoma;
+  letter-spacing: 2px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+#DB1{
+  width: 100px;
+}

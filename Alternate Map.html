@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+ <script src="bootstrap.bundle.js"></script>
+
+<head>
+    <title>Campus Map</title>
+    <link rel="stylesheet" href="MapPage.css">
+    <link rel="stylesheet" href="mapFooterCodeCSS.css">
+    <link rel="stylesheet" href="Map-Page.js">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+</head>
+
+<body>
+
+
+
+    <div id="background-container"></div>
+    <header>
+          <input type="checkbox" name="" id="chk1">
+          <div class="logo"><img src="images/DBColour.png" id="DB"></div>
+
+          <ul>
+              <li><a href="Homepage Version 3.html">Home</a></li>
+              <li><a href="Resource Page.html">Resources</a></li>
+              <li><div class="dropdown">
+                <button class="dropbtn">HotSpots
+                  <i class="fa fa-caret-down"></i>
+                </button>
+          <div class="dropdown-content">
+            <a href="POIinside.html">On Campus</a>
+            <a href="POIoutside.html">Off Campus</a>
+          </div></li>
+        </div>
+              <li><a href="Alternate Map.html">Map</a></li>
+              <li><a href="ResearchPage.html">Research</a></li>
+              <li>
+                  <a href="mailto: downtobisness@gmail.com"><i class="fa fa-envelope" ></i></a>
+                  <a href="https://twitter.com/DowntoBISness"><i class="fab fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/down_to_bisness/"><i class="fab fa-instagram"></i></a>
+              </li>
+          </ul>
+    </header>
+    <br><br><br><br>
+        <div class="projcard-container" style="display: flex;">
+
+                <div class="projcard transparent-card" style="width: 50%;">
+
+                    <button style="width: 100%;" onclick="changeLocation('Centenary Building Public Toilet')">Centenary</button>
+                    <br></br>
+                    <button style="width: 100%;" onclick="changeLocation('Information Technology Building')">IT Building</button>
+                    <br></br>
+                    <button style="width: 100%;" onclick="changeLocation('Thuto Building')">Thuto</button>
+                </div>
+
+                <div class="projcard transparent-card" style="width: 100%; height: 450px;" >
+
+                    <button style="width: 100%;" onclick="initMap()">Reset</button>
+                    <div id="map" style="height: 450px; width: 100%;"></div>
+                </div>
+
+                <div class="projcard transparent-card" style="width: 50%;">
+
+                    <button style="width: 100%;" onclick="changeLocation('UP Student Centre'); changeBackground(1)">Piaza</button>
+                    <br></br>
+                    <button style="width: 100%;" onclick="changeLocation('Student Service Centre')">Student Service Centre</button>
+                    <br></br>
+                    <button style="width: 100%;" onclick="changeLocation('University of Pretoria Aula')">Aula Building</button>
+                </div>
+            </div>
+
+        </div>
+
+    <style>
+
+        /* Style for transparent Bootstrap cards */
+        .transparent-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            /* Adjust the transparency as needed */
+            margin: 10px;
+            /* Add margin for indentation */
+            padding: 10px;
+        }
+
+    </style>
+
+    <style>
+        p {
+            color: #000000;
+            /* Change to your desired color */
+        }
+    </style>
+
+    <script>
+        // Initialize the map
+        function initMap() {
+            var mapOptions = {
+                center: { lat: -25.75417, lng: 28.23151 }, // University of Pretoria coordinates
+                zoom: 15, // Zoom level
+            };
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            // Function to add a marker (pin) at a specific location
+            function addMarker(location) {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map,
+                    title: location,
+                });
+            }
+
+            // Initial marker at University of Pretoria
+            addMarker({ lat: -25.75417, lng: 28.23151 });
+        }
+
+        // Function to change the location and add a marker
+        function changeLocation(location) {
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ address: location }, function (results, status) {
+                if (status === 'OK' && results[0]) {
+                    var newLocation = results[0].geometry.location;
+                    map.setCenter(newLocation);
+                    addMarker(newLocation);
+                } else {
+                    alert('Location not found.');
+                }
+            });
+        }
+
+
+    </script>
+
+    <!-- Load the Google Maps JavaScript API with your API key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD81aE8vycnrG-6bEczIbWoSkPcOpyKNKY&callback=initMap" async defer></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+
+        <footer class="footer">
+            <div class="waves">
+              <div class="wave" id="wave1"></div>
+              <div class="wave" id="wave2"></div>
+              <div class="wave" id="wave3"></div>
+              <div class="wave" id="wave4"></div>
+            </div>
+              <a href="Homepage Version 3.html"><img src="images/DBColour.png" id="DB1"></a>
+            <p id="dtbf">&copy;2023 DownToBISness | All Rights Reserved</p>
+          </footer>
+          <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+          <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+
+
+
+
+</html>
